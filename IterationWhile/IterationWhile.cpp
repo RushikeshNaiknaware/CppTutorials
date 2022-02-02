@@ -78,29 +78,58 @@ void checkPrimeOrNot(int inumber = 0) {
     return;
 }
 
-int main()
-{
-	//displayNames();
-    //displayFactors();
-    //displayFactorsTwicePerformance();
-    checkPrimeOrNot();
-
-    
-    for (int i{ 1 }; i <= 1000; ++i) {
-       checkPrimeOrNot(i);
+bool isPrime(int inumber) {
+    if (inumber <= 1) {
+        return false;
     }
+    int icounter{ 2 };
+    bool foundFactor = false;
+    while (icounter <= (sqrt(inumber))) {
+        if (inumber % icounter == 0) {
+            foundFactor = true;
+            break;
+        }
+        ++icounter;
+    }
+    // if no factors are found which divides the number then it is prime number.
+    if ( foundFactor == false) {
+        return true;
+    }   
+    return false;
+}
 
+//Display all prime numbers between 1 to n
+void allPrimeNumbers(int givenNumber) {
+    for (int i{ 1 }; i <= givenNumber; ++i) {
+        if (isPrime(i)) { std::cout << i << "\t\t "; }
+    }
+}
+
+void cronotimedemo() {
     using namespace std::chrono;
     steady_clock::time_point t1 = steady_clock::now();
     std::cout << "printing out 1000 stars...\n";
     for (int i{ 1 }; i <= 1000; ++i)
-    { std::cout << "*"; }
+    {
+        std::cout << "*";
+    }
     std::cout << std::endl;
     steady_clock::time_point t2 = steady_clock::now();
     duration<double> time_span = duration_cast<duration<double>>(t2 - t1);
 
     std::cout << "It took me " << time_span.count() << " seconds.";
     std::cout << std::endl;
+}
+int main()
+{
+	//displayNames();
+    //displayFactors();
+    //displayFactorsTwicePerformance();
+    //checkPrimeOrNot();
+    
+    allPrimeNumbers(1000);
+    cronotimedemo();
 
     //TODO: Unit testing above code for { +ve, -ve, 0 } numbers, fractions, decimal numbers.
+    //TODO: if user entered number which is out of integer range it will result in loss of data.
 }
