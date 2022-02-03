@@ -1,6 +1,7 @@
 // IterationWhile.cpp : This file contains the 'main' function. Program execution begins and ends there.
 //
 
+#include "IterationFor.h"
 #include <iostream>
 #include <ctime>
 #include <ratio>
@@ -105,7 +106,7 @@ void allPrimeNumbers(int givenNumber) {
     }
 }
 
-void cronotimedemo() {
+void cronoTimeDemo() {
     using namespace std::chrono;
     steady_clock::time_point t1 = steady_clock::now();
     std::cout << "printing out 1000 stars...\n";
@@ -127,8 +128,11 @@ int main()
     //displayFactorsTwicePerformance();
     //checkPrimeOrNot();
     
-    allPrimeNumbers(1000);
-    cronotimedemo();
+    //allPrimeNumbers(1000);
+    //cronotimedemo();
+    
+    //whyForLoop();
+    //descForLoop();
 
     //TODO: Unit testing above code for { +ve, -ve, 0 } numbers, fractions, decimal numbers.
     //TODO: if user entered number which is out of integer range it will result in loss of data.
