@@ -9,3 +9,5 @@ using std::cin;
 
 void whyForLoop();
 void descForLoop();
+void oddNumberRange();
+void oddNumberRangeDesc();

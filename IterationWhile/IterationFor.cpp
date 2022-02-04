@@ -43,3 +43,38 @@ void descForLoop() {
 		std::cout << "Value : " << icounter << std::endl;
 	}
 }
+
+// Print all odd integers in range 1 to n
+void oddNumberRange() {
+	int limit{};
+	std::cout << "Please enter the integer : ";
+	std::cin >> limit;
+
+	for (int odd{ 1 }; odd <= limit; odd+=2) {
+		std::cout << odd << "\n";
+	}
+	std::cout << std::endl;
+}
+
+// Print all odd integers in range 1 to n in descending order
+void oddNumberRangeDesc() {
+	int inum{};
+	std::cout << "Please enter the integer : ";
+	std::cin >> inum;
+
+	inum = (inum % 2 == 0) ? (inum - 1) : inum;
+
+	/* 
+	*	Initialize counter of for loop may not have any expression
+	*	Reevaluation parameter may also not have any expression
+	*   Conditional test is optional
+	*/
+	for (; ; ) {
+		std::cout << inum << "\n";
+		inum -= 2;
+		if (inum < 1) {
+			break;
+		}
+	}
+	std::cout << std::endl;
+}

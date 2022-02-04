@@ -133,6 +133,8 @@ int main()
     
     //whyForLoop();
     //descForLoop();
+    //oddNumberRange();
+    oddNumberRangeDesc();
 
     //TODO: Unit testing above code for { +ve, -ve, 0 } numbers, fractions, decimal numbers.
     //TODO: if user entered number which is out of integer range it will result in loss of data.
