@@ -134,7 +134,11 @@ int main()
     //whyForLoop();
     //descForLoop();
     //oddNumberRange();
-    oddNumberRangeDesc();
+    //oddNumberRangeDesc();
+    //guessOutput();
+    //printEvenNumbersLessThanN();
+    //printFirstNEvenNumbers();
+    get_positive_integer();
 
     //TODO: Unit testing above code for { +ve, -ve, 0 } numbers, fractions, decimal numbers.
     //TODO: if user entered number which is out of integer range it will result in loss of data.

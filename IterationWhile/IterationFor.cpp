@@ -1,5 +1,6 @@
 #include "IterationFor.h"
 
+
 void whyForLoop() {
 	constexpr int LIMIT{ 10 };
 	int icounter{ 1 };	// initialize
@@ -77,4 +78,53 @@ void oddNumberRangeDesc() {
 		}
 	}
 	std::cout << std::endl;
+}
+
+// Guess the output of the below code.
+void guessOutput() {
+	int inum{};
+	for (inum = 1 ; inum <= 5; inum++);
+	{
+		std::cout << inum << std::endl;
+	}
+}
+// Accept an integer n and print all even numbers less than n.
+void printEvenNumbersLessThanN() {
+	int inum{};
+	std::cout << "Please enter the positive integers : ";
+	std::cin >> inum;
+	
+	for (int even{ 2 }; even < inum; even += 2 ) {
+		std::cout << even << std::endl;
+	}
+}
+// Accept an integer n and print first n even numbers.
+void printFirstNEvenNumbers() {
+	int inum{};
+	std::cout << "Please enter the positive integers : ";
+	std::cin >> inum;
+	int even{ 2 };
+	for (int i{ 1 }; i <= inum; ++i) {
+		std::cout << even << std::endl;
+		even += 2;
+	}
+}
+
+// Get the Positive integer with validation. Input like 3n7 fails consider only 3 as input and remaining n7 is left into stream.
+int get_positive_integer() {
+	int number{};
+	do {
+		std::cout << "Please enter a number : ";
+		std::cin >> number;
+		if ( std::cin.fail() ) {
+			std::cout << "\n\tInvalid input, Please enter a number.\n";
+			std::cin.clear();
+			std::cin.ignore(std::numeric_limits<int>::max(),'\n');
+		}
+		else {
+			std::cout << number;
+			break;
+		}
+	} while (true);
+	return number;
 }
