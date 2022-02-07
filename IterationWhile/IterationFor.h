@@ -4,6 +4,7 @@
 #include <ratio>
 #include <chrono>
 #include <limits>
+#include <array>
 using std::cout;
 using std::endl;
 using std::cin;
@@ -16,3 +17,4 @@ void guessOutput();
 void printEvenNumbersLessThanN();
 void printFirstNEvenNumbers();
 int get_positive_integer();
+int exitDemo();
