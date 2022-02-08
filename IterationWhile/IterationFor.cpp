@@ -152,6 +152,5 @@ int exitDemo() {
 		std::cerr << "Error : Invalid input entered, allowed range is from 1 to " << NUMBER_OF_ITEMS_LIST << " only." << std::endl;
 		exit(EXIT_FAILURE);
 	}
-
 	return 0;
 }

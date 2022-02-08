@@ -6,6 +6,7 @@
 #include <ctime>
 #include <ratio>
 #include <chrono>
+#include <cmath>
 using std::cout;
 using std::endl;
 using std::cin;
