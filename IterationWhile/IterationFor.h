@@ -18,4 +18,7 @@ void printEvenNumbersLessThanN();
 void printFirstNEvenNumbers();
 int get_positive_integer();
 int exitDemo();
-void startPattern(int);
+void starPattern(const int);
+void starPattern2(const int);
+void starPattern3(const int);
+void starPattern4(const int);

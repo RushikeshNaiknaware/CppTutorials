@@ -156,9 +156,53 @@ int exitDemo() {
 	return 0;
 }
 
-void startPattern(int inumber ) {
+void starPattern(const int inumber) {
 	for (int rowno = 1; rowno <= inumber; ++rowno ) {
 		for (int star = 1; star <= rowno; ++star ) {
+			std::cout << "*";
+		}
+		std::cout << "\n";
+	}
+	std::cout << std::endl;
+}
+
+void starPattern2(const int inumber) {
+/*
+	for ( int rowno = 1; rowno <= inumber; ++rowno ) {
+		for (int star = 1; star <= inumber - (rowno - 1); ++star ) {
+			std::cout << "*";
+		}
+		std::cout << "\n";
+	}
+	std::cout << std::endl;
+*/
+	for (int rowno = inumber; rowno; --rowno ) {
+		for (int star = 1; star <= rowno; ++star) {
+			std::cout << "*";
+		}
+		std::cout << "\n";
+	}
+}
+
+void starPattern3(const int inumber) {
+	for (int rowno = inumber; rowno; --rowno) {
+		for (int space = 1; space <= inumber - rowno; ++space ) {
+			std::cout << " ";
+		}
+		for (int star = 1; star <= rowno + (rowno - 1); ++star) {
+			std::cout << "*";
+		}
+		std::cout << "\n";
+	}
+	std::cout << std::endl;
+}
+
+void starPattern4(const int inumber) {
+	for (int rowno = 1; rowno <= inumber; ++rowno) {
+		for (int space = 1; space <= inumber - rowno; ++space) {
+			std::cout << " ";
+		}
+		for (int star = 1; star <= rowno; ++star) {
 			std::cout << "*";
 		}
 		std::cout << "\n";
