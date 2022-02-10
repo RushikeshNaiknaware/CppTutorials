@@ -139,12 +139,13 @@ int main(void)
     //guessOutput();
     //printEvenNumbersLessThanN();
     //printFirstNEvenNumbers();
-    //get_positive_integer();
-    
-    exitDemo();
-
+    //get_positive_integer();    
+    //exitDemo();
 
     //TODO: Unit testing above code for { +ve, -ve, 0 } numbers, fractions, decimal numbers.
     //TODO: if user entered number which is out of integer range it will result in loss of data.
+    constexpr int NUM_OF_ROWS = 10;
+    startPattern(NUM_OF_ROWS);
+
     return EXIT_SUCCESS;
 }

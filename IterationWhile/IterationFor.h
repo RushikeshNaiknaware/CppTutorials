@@ -18,3 +18,4 @@ void printEvenNumbersLessThanN();
 void printFirstNEvenNumbers();
 int get_positive_integer();
 int exitDemo();
+void startPattern(int);

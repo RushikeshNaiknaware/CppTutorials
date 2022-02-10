@@ -1,6 +1,5 @@
 #include "IterationFor.h"
 
-
 void whyForLoop() {
 	constexpr int LIMIT{ 10 };
 	int icounter{ 1 };	// initialize
@@ -88,6 +87,7 @@ void guessOutput() {
 		std::cout << inum << std::endl;
 	}
 }
+
 // Accept an integer n and print all even numbers less than n.
 void printEvenNumbersLessThanN() {
 	int inum{};
@@ -98,6 +98,7 @@ void printEvenNumbersLessThanN() {
 		std::cout << even << std::endl;
 	}
 }
+
 // Accept an integer n and print first n even numbers.
 void printFirstNEvenNumbers() {
 	int inum{};
@@ -153,4 +154,14 @@ int exitDemo() {
 		exit(EXIT_FAILURE);
 	}
 	return 0;
+}
+
+void startPattern(int inumber ) {
+	for (int rowno = 1; rowno <= inumber; ++rowno ) {
+		for (int star = 1; star <= rowno; ++star ) {
+			std::cout << "*";
+		}
+		std::cout << "\n";
+	}
+	std::cout << std::endl;
 }
