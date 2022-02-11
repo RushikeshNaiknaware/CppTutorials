@@ -10,6 +10,10 @@
 using std::cout;
 using std::endl;
 using std::cin;
+
+int globalVariable;
+
+
 //Accept name of student and display it 5 times.
 void displayNames() {
     std::string name;
@@ -122,6 +126,27 @@ void cronoTimeDemo() {
     std::cout << "It took me " << time_span.count() << " seconds.";
     std::cout << std::endl;
 }
+
+void scopeOfVariables() {    
+    // life time of local variables are only inside the local scope where they are defined.    
+    int localVariable;
+    std::cout << "local variables are by default assigned garbage value : " << localVariable << std::endl;
+    std::cout << "global variables are by default assigned 0 value      : " << globalVariable << std::endl;
+}
+
+void divideDemo()
+{
+    using namespace std::literals;
+    std::string message = "Please enter the numerator : "s;
+    int numerator = get_positive_integer(message);          // message : actual argument passed to function.
+    std::cout << "numerator : " << numerator << "\n";
+
+    int denominator = get_positive_integer("Please enter the denominator : "s);
+    std::cout << "denominator : " << denominator << "\n";   
+
+    float result = divide(numerator, denominator);      // numerator, denominator : actual argument passed to function.
+    std::cout << numerator << " / " << denominator << " = " << result << std::endl;
+}
 int main(void)
 {
 	//displayNames();
@@ -148,7 +173,10 @@ int main(void)
     //starPattern(NUM_OF_ROWS);
     //starPattern2(NUM_OF_ROWS);
     //starPattern3(NUM_OF_ROWS);
-    starPattern4(NUM_OF_ROWS);
+    //starPattern4(NUM_OF_ROWS);
+   
+    divideDemo();
+    scopeOfVariables();
 
     return EXIT_SUCCESS;
 }

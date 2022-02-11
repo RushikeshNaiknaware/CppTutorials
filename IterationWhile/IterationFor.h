@@ -17,6 +17,9 @@ void guessOutput();
 void printEvenNumbersLessThanN();
 void printFirstNEvenNumbers();
 int get_positive_integer();
+int get_positive_integer(std::string);
+float divide(int, int);
+
 int exitDemo();
 void starPattern(const int);
 void starPattern2(const int);

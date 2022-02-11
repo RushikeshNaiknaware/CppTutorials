@@ -137,6 +137,38 @@ int get_positive_integer() {
 	return number;
 }
 
+// Get positive integer with validation and user defined messages.
+int get_positive_integer(std::string message) {
+	int number{};
+	do {
+		std::cout << message;
+		std::cin >> number; 
+
+		if (std::cin.fail()) {
+			std::cout << "\n\tInvalid input, "<< message << " .\n";
+			std::cin.clear();
+			std::cin.ignore(std::numeric_limits<int>::max(), '\n');
+		}
+		else {
+			if (number < 0) {
+				std::cout << "Please enter the positive number only.\n";
+			}
+			else {
+				//std::cout << number;
+				break;
+			}		
+		}
+	} while (true);
+	return number;
+}
+
+// Divides the number1 by number2 and returns the result.
+float divide(int number1, int number2) {
+	//formal arguments/parameters number1 and number2 receives the values.
+	return static_cast<float> ( number1 ) / number2 ;
+}
+
+
 //Menu card contains only 10 items, if user enters digit more than 10 we should exit with error messsage.
 int exitDemo() {
 	std::cout << "\nLaundary Item List\n";
