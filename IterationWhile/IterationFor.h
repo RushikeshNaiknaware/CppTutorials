@@ -5,6 +5,7 @@
 #include <chrono>
 #include <limits>
 #include <array>
+#include <cctype>
 using std::cout;
 using std::endl;
 using std::cin;
@@ -19,7 +20,7 @@ void printFirstNEvenNumbers();
 int get_positive_integer();
 int get_positive_integer(std::string);
 float divide(int, int);
-
+char getAlphabet();
 int exitDemo();
 void starPattern(const int);
 void starPattern2(const int);

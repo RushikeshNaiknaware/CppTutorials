@@ -168,6 +168,29 @@ float divide(int number1, int number2) {
 	return static_cast<float> ( number1 ) / number2 ;
 }
 
+char getAlphabet() {	
+	char alpha{};
+	while (true) {
+		std::cout << "Please enter the alphabet : \n";
+		std::cin >> alpha;
+
+		if (std::cin.fail()) {
+			std::cerr << "\nInvalid input entered, Please enter the valid alphabet. \n";
+			cin.clear();
+			cin.ignore(std::numeric_limits<int>::max(), '\n');
+		}
+		else {
+			if (isalpha(alpha)) {
+				return alpha;
+			}
+			else {
+				std::cerr << "\nCharacter entered is not a alphabet, Please enter only alphabets. \n";
+				cin.clear();
+				cin.ignore(std::numeric_limits<int>::max(), '\n');
+			}
+		}
+	}
+}
 
 //Menu card contains only 10 items, if user enters digit more than 10 we should exit with error messsage.
 int exitDemo() {

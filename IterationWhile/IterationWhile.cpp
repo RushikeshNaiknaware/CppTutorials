@@ -11,7 +11,8 @@ using std::cout;
 using std::endl;
 using std::cin;
 
-int globalVariable;
+int globalVariable1;
+int globalVariable2{ 10 };
 
 
 //Accept name of student and display it 5 times.
@@ -129,9 +130,18 @@ void cronoTimeDemo() {
 
 void scopeOfVariables() {    
     // life time of local variables are only inside the local scope where they are defined.    
-    int localVariable;
-    std::cout << "local variables are by default assigned garbage value : " << localVariable << std::endl;
-    std::cout << "global variables are by default assigned 0 value      : " << globalVariable << std::endl;
+    //int localVariable;
+    //std::cout << "local variables are by default assigned garbage value : " << localVariable << std::endl;
+    std::cout << "global variables are by default assigned 0 value      : " << globalVariable1 << std::endl;
+    std::cout << "global variable 1 : " << globalVariable1 << ", global variable 2 : " << globalVariable2 << std::endl;
+}
+
+void accessibilityOfVariables() {
+    // global variable are accessible across the program, except for the function which defines it.
+    // for some reason I want to use both the local variable with name globalVariable2 and global variable.
+    int globalVariable2{ 5 };
+    std::cout << "global variable 1 : " << globalVariable1 << ", global variable 2 : " << globalVariable2 << std::endl;
+    std::cout << "global variable 1 : " << globalVariable1 << ", global variable 2 : " << ::globalVariable2 << std::endl;
 }
 
 void divideDemo()
@@ -147,6 +157,12 @@ void divideDemo()
     float result = divide(numerator, denominator);      // numerator, denominator : actual argument passed to function.
     std::cout << numerator << " / " << denominator << " = " << result << std::endl;
 }
+
+void inlineDemo() {
+    // define a function inline is just the suggestion to the compiler to replace the function call with its code.
+    std::cout << "alphabet is : " << getAlphabet() << std::endl;
+}
+
 int main(void)
 {
 	//displayNames();
@@ -169,14 +185,18 @@ int main(void)
 
     //TODO: Unit testing above code for { +ve, -ve, 0 } numbers, fractions, decimal numbers.
     //TODO: if user entered number which is out of integer range it will result in loss of data.
-    constexpr int NUM_OF_ROWS = 10;
+    //constexpr int NUM_OF_ROWS = 10;
     //starPattern(NUM_OF_ROWS);
     //starPattern2(NUM_OF_ROWS);
     //starPattern3(NUM_OF_ROWS);
     //starPattern4(NUM_OF_ROWS);
    
-    divideDemo();
-    scopeOfVariables();
+    //divideDemo();
+    //scopeOfVariables();
+    //accessibilityOfVariables();
+
+    inlineDemo();
+
 
     return EXIT_SUCCESS;
 }
