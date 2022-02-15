@@ -163,6 +163,24 @@ void inlineDemo() {
     std::cout << "alphabet is : " << getAlphabet() << std::endl;
 }
 
+// Accept an integer and display its square, continue the process till the user wishes.
+
+void doWhileDemo() {
+    int inum{};
+    long double square{};
+    char wish{};
+    do {
+        std::cout << "Please enter an integer : ";
+        std::cin >> inum;
+        // Explicit type promotion from int to long double.
+        square = (long double) inum * inum;
+        std::cout << "Square of the " << inum << " is " << square << std::endl;
+        std::cout << "Press 'Y' to continue, 'N' to stop : ";
+        std::cin >> wish;
+    } while ( toupper(wish) == 'Y');
+
+}
+
 int main(void)
 {
 	//displayNames();
@@ -195,8 +213,18 @@ int main(void)
     //scopeOfVariables();
     //accessibilityOfVariables();
 
-    inlineDemo();
+    //inlineDemo();
 
+    doWhileDemo();
+
+    //{
+    //constexpr float x = 42.0;
+    //constexpr float y{ 108 };
+    //constexpr float z = std::exp(5.0f);
+    //constexpr int i;
+    //int j = 0;
+    //constexpr int k = j + 1;
+    //}
 
     return EXIT_SUCCESS;
 }
