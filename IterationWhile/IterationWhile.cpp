@@ -7,6 +7,7 @@
 #include <ratio>
 #include <chrono>
 #include <cmath>
+#include <iomanip>
 using std::cout;
 using std::endl;
 using std::cin;
@@ -164,7 +165,6 @@ void inlineDemo() {
 }
 
 // Accept an integer and display its square, continue the process till the user wishes.
-
 void doWhileDemo() {
     int inum{};
     long double square{};
@@ -173,14 +173,17 @@ void doWhileDemo() {
         std::cout << "Please enter an integer : ";
         std::cin >> inum;
         // Explicit type promotion from int to long double.
-        square = (long double) inum * inum;
-        std::cout << "Square of the " << inum << " is " << square << std::endl;
+        //square = (long double) inum * inum;
+        square = pow(inum, 2);
+        //precision is 0 meaning after the decimal point no digits, std::fixed means however big answer will not be in exponential format.
+        std::cout << "Square of the " << inum << " is " << std::setprecision(0) << std::fixed << square << std::endl;
         std::cout << "Press 'Y' to continue, 'N' to stop : ";
         std::cin >> wish;
     } while ( toupper(wish) == 'Y');
-
 }
 
+
+void doWhileDemoSquareRoot();
 int main(void)
 {
 	//displayNames();
@@ -212,10 +215,10 @@ int main(void)
     //divideDemo();
     //scopeOfVariables();
     //accessibilityOfVariables();
-
     //inlineDemo();
-
-    doWhileDemo();
+    //doWhileDemo();
+    
+    doWhileDemoSquareRoot();
 
     //{
     //constexpr float x = 42.0;
@@ -227,4 +230,22 @@ int main(void)
     //}
 
     return EXIT_SUCCESS;
+}
+
+
+// Accept an integer from user and display its square root.
+// Continue the process till sum of integers entered so far does not exceeds 100.
+void doWhileDemoSquareRoot() {
+    int inum{};
+    long long llsum{}; // long long int is also same.
+    double sqroot{};
+    constexpr long long LIMIT{ 100L };
+    do {
+        std::cout << "Please enter an integer : ";
+        std::cin >> inum;
+        llsum += inum;
+        sqroot = std::sqrt(inum);
+        std::cout << "2 Square root of the " << inum << " is "
+            << std::setprecision(2) << std::fixed << sqroot << std::endl;
+    } while (llsum <= LIMIT); // Wherever possible always try to compare variables of same type.
 }
