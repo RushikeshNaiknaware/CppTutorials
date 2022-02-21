@@ -243,6 +243,11 @@ void doWhileDemoSquareRoot() {
     do {
         std::cout << "Please enter an integer : ";
         std::cin >> inum;
+        // if the user enters the negative number then sum will not become 100 also square root of negative number is -nan 
+        // hence we do the validation for negative number
+        if (inum <= 0) {
+            continue;
+        }
         llsum += inum;
         sqroot = std::sqrt(inum);
         std::cout << "2 Square root of the " << inum << " is "
